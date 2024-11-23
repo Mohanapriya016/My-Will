@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web</title>
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: deeppink; 
+            padding: 10px 20px;
+        }
+        .navbar-brand {
+            color: white; 
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        /* Header Styling */
+        .head {
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 20px;
+            background-color: blue; 
+        }
+        .span {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+        }
+        .span input[type="search"] {
+            padding: 5px; 
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .span img {
+            width: 30px; 
+            height: 30px;
+            border-radius: 50%;
+            background-color: white; 
+            padding: 5px; 
+            border: 2px solid black; 
+        }
+        
+        /* Grid Container Styling */
+        .grid-container {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(2, 1fr); /* Ensures 2 equal columns */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            min-width: 300px; /* Fixed the issue here */
+        }
+
+        .card-content-wrapper {
+            display: flex; /* Flex layout for image and content */
+            align-items: flex-start; /* Align items to the top */
+            gap: 20px; /* Space between image and content */
+        }
+
+        .card-image img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover; 
+        }
+
+        .card-content {
+            flex: 1; 
+            text-align: left; 
+            padding-top: 10px;
+        }
+
+       /* Nested Cards Container Styling */
+        .nested-cards-container {
+            display: flex; 
+            gap: 20px;
+            justify-content: space-between; 
+            margin-top: 20px;
+        }
+
+        .nested-card {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 30%; 
+        }
+        .card-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+       /* Button Styling */
+.btn {
+    padding: 15px 25px; 
+    font-size: 0.9rem; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%; 
+}
+
+.btn-danger {
+    background: #d9534f;
+}
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack the cards vertically on smaller screens */
+    }
+
+    .card {
+        min-width: 100%; /* Ensure cards take full width on small screens */
+    }
+
+    .card-buttons button {
+        width: 100%; /* Make buttons full-width on smaller screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="navbar-brand">My Will</div>
+    </div>
+
+    <!-- Header Section -->
+    <div class="head">
+        <div>
+            <h1 style="color: white;">Good morning, Vinoth!</h1>
+            <h3 style="color: white;">Today is 10 November 2024</h3>
+        </div>
+        <div class="span">
+            <input type="search" placeholder="Search">
+            <img src="img/a3.png" alt="Arrow Icon">
+            <img src="img/a2.png" alt="Settings Icon">
+            <img src="img/a1.png" alt="Bell Icon">
+        </div>
+    </div>
+    <br><br>
+
+    <!-- Grid Cards Section -->
+    <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-content-wrapper">
+                <div class="card-image">
+                    <img src="img/a4.jpeg" alt="Card Image 1">
+                </div>
+                <div class="card-content">
+                    <h2>Ethan Will</h2>
+                    <p>Date of Creation: 04/12/1988</p>
+                    <p>Status: Complete</p>
+                    <h2>$ 2.5 Lakhs</h2>
+                    <p>Worth assets today</p>
+                </div>
+            </div>
+        
+            <!-- Nested Cards Row -->
+            <div class="nested-cards-container">
+                <div class="nested-card">
+                    <h3>10</h3>
+                    <h4>Active Assets</h4>
+                </div>
+                <div class="nested-card">
+                    <h3>3</h3>
+                    <h4>Active Liabilities</h4>
+                </div>
+                <div class="nested-card">
+                    <h3>15</h3>
+                    <h4>Active Beneficiaries</h4>
+                </div>
+                <div class="nested-card">
+                    <h3>3</h3>
+                    <h4>Archived Signatories</h4>
+                </div>
+            </div>
+        
+            <div class="card-buttons">
+                <button class="btn btn-danger">Add New Asset</button><br>
+                <button class="btn btn-danger">Update Asset Value</button>
+            </div>
+            
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <h1>Signatory Will</h1>
+            
+            <!-- Nested Cards Row (Flex container) -->
+            <div class="nested-cards-container">
+                <div class="nested-card">
+                    <img src="img/a4.jpeg" alt="Card Image 1" width="40%">
+                    <h3>Liam</h3>
+                    <p>Witness</p>
+                    <p>Date:28.04.2013</p>
+                    <p>Date:28.04.2013</p>
+                </div>
+                <div class="nested-card">
+                    <img src="img/a4.jpeg" alt="Card Image 1" width="40%">
+                    <h3>Liam</h3>
+                    <p>Witness</p>
+                   <p>Date:28.04.2013</p>
+                   <p>Date:28.04.2013</p>
+                </div>
+                <div class="nested-card">
+                    <img src="img/a4.jpeg" alt="Card Image 1" width="40%">
+                    <h3>Liam</h3>
+                    <p>Witness</p>
+                   <p>Date:28.04.2013</p>
+                   <p>Date:28.04.2013</p>
+                </div>
+            </div>
+            
+            <div class="card-buttons">
+                <button class="btn btn-danger">View Invitations</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
